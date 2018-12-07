@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+$main-color: #CF000F;
+$background-color: #ECF0F1;
+$text-color: #343434;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: $background-color;
+  color: $text-color;
+}
+
+.loading-spinner {
+    color: $main-color;
+}
+
+.noscript {
+    color: $main-color;
+}

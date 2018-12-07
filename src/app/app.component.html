@@ -1,20 +1,53 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<mat-toolbar class="toolbar">
+  <h1>BrainRest</h1>
+</mat-toolbar>
 
+<div class="container">
+
+  <form>
+    <div class="input-group">
+      <span for="distance" class="name">DISTANCE</span>
+      <span for="distance" class="unit">KM</span>
+      <input type="number" name="distance" [ngClass]="{choose: choice == 'distance'}" [(ngModel)]="distance" step="0.1"
+        min="0" max="9999" placeholder="--">
+    </div>
+
+    <div class="input-group">
+      <span for="time" class="name">TIME</span>
+      <span for="time" class="unit">HH:MM:SS</span>
+      <input type="time" name="time" [ngClass]="{choose: choice == 'time'}" [(ngModel)]="time" step="1">
+    </div>
+
+    <div class="input-group">
+      <span for="speed" class="name">SPEED</span>
+      <span for="speed" class="unit">KM</span>
+      <input type="number" name="speed" [ngClass]="{choose: choice == 'speed'}" [(ngModel)]="speed" step="0.1" (change)="pace = decimalToMs(1 / speed * 60)"
+        min="0" max="9999" placeholder="--" />
+    </div>
+
+    <div class="input-group">
+      <span for="pace" class="name">PACE</span>
+      <span for="pace" class="unit">MM:SS</span>
+      <input type="time" name="pace" [ngClass]="{choose: choice == 'speed'}" [(ngModel)]="pace" step="60" (change)="speed = round(1 / (msToDecimal(pace) / 60))" />
+    </div>
+
+    <div class="input-group">
+      <div class="radio">
+        <input id="distance" type="radio" [(ngModel)]="choice" value="distance" name="choice" />
+        <label for="distance" class="radio"><i class="material-icons">settings_ethernet</i>DISTANCE</label>
+      </div>
+
+      <div class="radio">
+        <input id="time" type="radio" [(ngModel)]="choice" value="time" name="choice" />
+        <label for="time" class="radio"><i class="material-icons">timer</i>TIME</label>
+      </div>
+
+      <div class="radio">
+        <input id="speed" type="radio" [(ngModel)]="choice" value="speed" name="choice" />
+        <label for="speed" class="radio"><i class="material-icons">flash_on</i>SPEED/PACE</label>
+      </div>
+
+    </div>
+  </form>
+
+</div>
