@@ -8,9 +8,11 @@ import { MatToolbarModule, MatFormFieldModule, MatInputModule, MatButtonModule, 
 
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { TimeInputComponent } from './time-input/time-input.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TimeInputComponent
   ],
   imports: [
     BrowserModule,
