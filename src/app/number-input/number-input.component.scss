@@ -26,20 +26,18 @@ input:focus {
   text-align: center;
   box-sizing: border-box;
   color: $text-color;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: $font-family;
   padding: 10px 23px;
   font-size: 23px;
   background-color: transparent;
-  border: 3px solid $main-color;
+  border: 3px solid $text-color;
   border-radius: 30px;
   width: 100%;
   margin-top: 2%;
   font-weight: 500;
-}
-
-.number:disabled {
-  color: grey;
-  border-color: grey;
+  input {
+    color: $text-color;
+  }
 }
 
 .number::placeholder {
@@ -47,8 +45,12 @@ input:focus {
 }
 
 .number.choose {
-  border-color: $text-color;
+  border-color: $main-color;
   pointer-events: none;
+  input {
+    color: $main-color;
+    }
+  
 }
 
 .name {
