@@ -1,0 +1,5 @@
+<span for="number" class="name">{{name}}</span>
+<span for="number" class="unit">{{unit}}</span>
+<div class="number" name="number" [ngClass]="{choose: choose}">
+  <input type="number" [(ngModel)]="value" (change)="update();" step="0.1" min="0" max="9999" placeholder="--">
+</div>

@@ -1,0 +1,67 @@
+@import '../../styles.scss';
+
+input {
+  -moz-appearance: textfield;
+  text-align: center;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  background-color: transparent;
+  border: none;
+  font-weight: inherit;
+  width: 100%;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+.number {
+  text-align: center;
+  box-sizing: border-box;
+  color: $text-color;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  padding: 10px 23px;
+  font-size: 23px;
+  background-color: transparent;
+  border: 3px solid $main-color;
+  border-radius: 30px;
+  width: 100%;
+  margin-top: 2%;
+  font-weight: 500;
+}
+
+.number:disabled {
+  color: grey;
+  border-color: grey;
+}
+
+.number::placeholder {
+  color: $text-color;
+}
+
+.number.choose {
+  border-color: $text-color;
+  pointer-events: none;
+}
+
+.name {
+  padding-left: 8%;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: left;
+}
+
+.unit {
+  float: right;
+  padding-right: 8%;
+  font-weight: 500;
+  font-size: 14px;
+  text-align: right
+}
