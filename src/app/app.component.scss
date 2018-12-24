@@ -1,9 +1,31 @@
 @import '../styles.scss';
 
+/* Main frame */
 .container {
   padding: 5% 10%;
 }
 
+/* Flex box */
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.flex-item {
+  width: 100%;
+}
+
+/* Toolbar */
 .toolbar {
   background-color: $main-color;
   color: $background-color;
@@ -22,6 +44,10 @@
   color: $main-color;
 }
 
+.radio {
+  text-align: center;
+}
+
 .radio label:hover {
   color: transparentize($main-color, 0.4);
 }
@@ -29,20 +55,4 @@
 .radio label {
   font-size: 23px;
   font-weight: 500;
-}
-
-// Flex
-
-.flex-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 3%;
-
-}
-
-.flex-item {
-  // width: 100%;
 }
