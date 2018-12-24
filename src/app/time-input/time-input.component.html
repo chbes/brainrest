@@ -1,14 +1,12 @@
-<div class="input-group">
-  <span for="time" class="name">{{name}}</span>
-  <span for="time" class="unit">{{unit}}</span>
-  <div class="time" name="time" [ngClass]="{choose: choose}">
-    <input class="part" type="number" name="h" [ngModel]="h" (ngModelChange)="h = $event;update();"
-      step="1" min="0" max="99" placeholder="--">
-    <span>:</span>
-    <input class="part" type="number" name="m" [ngModel]="m" (ngModelChange)="m = $event;update();"
-      step="1" min="0" [max]="59" placeholder="--">
-    <span *ngIf="unit == 'HH:MM:SS'">:</span>
-    <input *ngIf="unit == 'HH:MM:SS'" class="part" type="number" name="s" [ngModel]="s"
-      (ngModelChange)="s = $event;update();" step="1" min="0" max="59" placeholder="--">
-  </div>
+<span for="time" class="name">{{name}}</span>
+<span for="time" class="unit">{{unit}}</span>
+<div class="time" name="time" [ngClass]="{choose: choose}">
+  <input type="number" name="h" [ngModel]="h" (ngModelChange)="h = $event;update();" step="1" min="0" max="99"
+    placeholder="--">
+  <span>:</span>
+  <input type="number" name="m" [ngModel]="m" (ngModelChange)="m = $event;update();" step="1" min="0"
+    [max]="59" placeholder="--">
+  <span *ngIf="unit == 'HH:MM:SS'">:</span>
+  <input *ngIf="unit == 'HH:MM:SS'" type="number" name="s" [ngModel]="s" (ngModelChange)="s = $event;update();"
+    step="1" min="0" max="59" placeholder="--">
 </div>
