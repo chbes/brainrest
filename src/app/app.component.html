@@ -9,7 +9,7 @@
 
     <time-input [choose]="choice == 'time'" [value]="time" [name]="'TIME'" [unit]="'HH:MM:SS'" (valueChange)="time = $event;compute();"></time-input>
 
-    <number-input [choose]="choice == 'speed'" [value]="speed" [name]="'SPEED'" [unit]="'KM/H'" (valueChange)="speed = $event;compute();"></number-input>
+    <number-input [choose]="choice == 'speed'" [value]="speed" [name]="'SPEED'" [unit]="'KM/H'" (valueChange)="speed = $event;pace = 1 / speed * 60;compute();"></number-input>
 
     <time-input [choose]="choice == 'speed'" [value]="pace" [name]="'PACE'" [unit]="'MM:SS'" (valueChange)="pace = $event;speed = round(1 / (pace / 60));compute();"></time-input>
 
