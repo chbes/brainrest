@@ -5,41 +5,39 @@
 <div class="container">
 
   <form>
-    <div class="input-group">
-      <span for="distance" class="name">DISTANCE</span>
-      <span for="distance" class="unit">KM</span>
-      <input class="input" type="number" name="distance" [ngClass]="{choose: choice == 'distance'}" [(ngModel)]="distance" (change)="compute()"
-        step="0.1" min="0" max="9999" placeholder="--">
-    </div>
+    <number-input [choose]="choice == 'distance'" [value]="distance" [name]="'DISTANCE'" [unit]="'KM'" (valueChange)="distance = $event;compute();"></number-input>
 
     <time-input [choose]="choice == 'time'" [value]="time" [name]="'TIME'" [unit]="'HH:MM:SS'" (valueChange)="time = $event;compute();"></time-input>
 
-    <div class="input-group">
-      <span for="speed" class="name">SPEED</span>
-      <span for="speed" class="unit">KM</span>
-      <input class="input" type="number" name="speed" [ngClass]="{choose: choice == 'speed'}" [(ngModel)]="speed" step="0.1" (change)="pace = (1 / speed) * 60;compute();"
-        min="0" max="9999" placeholder="--" />
-    </div>
+    <number-input [choose]="choice == 'speed'" [value]="speed" [name]="'SPEED'" [unit]="'KM/H'" (valueChange)="speed = $event;compute();"></number-input>
 
     <time-input [choose]="choice == 'speed'" [value]="pace" [name]="'PACE'" [unit]="'MM:SS'" (valueChange)="pace = $event;speed = round(1 / (pace / 60));compute();"></time-input>
 
-    <div class="input-group">
-      <div class="radio">
-        <input id="distance" type="radio" [(ngModel)]="choice" value="distance" name="choice" />
-        <label for="distance" class="radio"><i class="material-icons">settings_ethernet</i>DISTANCE</label>
-      </div>
+    <div class="flex-container">
 
-      <div class="radio">
-        <input id="time" type="radio" [(ngModel)]="choice" value="time" name="choice" />
-        <label for="time" class="radio"><i class="material-icons">timer</i>TIME</label>
-      </div>
-
-      <div class="radio">
-        <input id="speed" type="radio" [(ngModel)]="choice" value="speed" name="choice" />
-        <label for="speed" class="radio"><i class="material-icons">flash_on</i>SPEED/PACE</label>
-      </div>
-
+        <div class="radio flex-item">
+          <input id="distance" type="radio" [(ngModel)]="choice" value="distance" name="choice" />
+          <label for="distance" class="radio">
+            DISTANCE
+          </label>
+        </div>
+        
+        <div class="radio flex-item">
+          <input id="time" type="radio" [(ngModel)]="choice" value="time" name="choice" />
+          <label for="time" class="radio">
+            TIMER
+          </label>
+        </div>
+        
+        <div class="radio flex-item">
+          <input id="speed" type="radio" [(ngModel)]="choice" value="speed" name="choice" />
+          <label for="speed" class="radio">
+            SPEED / PACE
+          </label>
+        </div>
+        
     </div>
+
   </form>
 
 </div>

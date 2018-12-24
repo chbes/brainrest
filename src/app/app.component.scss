@@ -1,10 +1,5 @@
 @import '../styles.scss';
 
-// .input-group {
-//   margin: 20px 10px;
-//   background-color: transparent;
-// }
-
 .container {
   padding: 5% 10%;
 }
@@ -14,81 +9,7 @@
   color: $background-color;
 }
 
-.input-group {
-  margin: 5% 0%;
-}
-
-input {
-  color: $text-color;  
-}
-
-input:focus {
-  outline: none;
-}
-
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
-input.part {
-  text-align: center;
-  box-sizing: border-box;
-  font-family: inherit;
-  font-size: inherit;
-  background-color: transparent;
-  border: none;
-  font-weight: inherit;
-}
-
-.input {
-  text-align: center;
-  box-sizing: border-box;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-  padding: 10px 23px;
-  font-size: 23px;
-  background-color: transparent;
-  border: 3px solid $main-color;
-  border-radius: 30px;
-  width: 100%;
-  margin-top: 2%;
-  font-weight: 500;
-}
-
-.input:disabled {
-  color: grey;
-  border-color: grey;
-}
-
-.input::placeholder {
-  color: $text-color;
-}
-
-.input.choose {
-  border-color: $text-color;
-  pointer-events: none;
-}
-
-.name {
-  padding-left: 8%;
-  font-weight: 500;
-  font-size: 14px;
-  text-align: left;
-}
-
-.unit {
-  float: right;
-  padding-right: 8%;
-  font-weight: 500;
-  font-size: 14px;
-  text-align: right
-}
-
+/* Radio */
 .radio input {
   position: absolute;
   opacity: 0;
@@ -97,7 +18,7 @@ input.part {
   width: 0;
 }
 
-.radio input:checked~label {
+.radio input:checked ~ label {
   color: $main-color;
 }
 
@@ -108,14 +29,20 @@ input.part {
 .radio label {
   font-size: 23px;
   font-weight: 500;
-  text-align: center;
-  width: 100%;
-  display: inline-block;
-  margin: 4%;
-  vertical-align: middle;
 }
 
-.radio label .material-icons {
-  margin: 0 2%;
-  font-size: 30px;
+// Flex
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3%;
+
+}
+
+.flex-item {
+  // width: 100%;
 }
