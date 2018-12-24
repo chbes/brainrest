@@ -31,6 +31,22 @@
   color: $background-color;
 }
 
+.inputs-frame {
+
+  .flex-item {
+    margin-bottom: 11%;
+  }
+
+}
+
+.radios-frame {
+  
+  margin-top: 14%;
+  
+  .flex-item {
+  }
+}
+
 /* Radio */
 .radio input {
   position: absolute;
@@ -40,7 +56,7 @@
   width: 0;
 }
 
-.radio input:checked ~ label {
+.radio input:checked~label {
   color: $main-color;
 }
 
@@ -49,7 +65,7 @@
 }
 
 .radio label:hover {
-  color: transparentize($main-color, 0.4);
+  color: transparentize($main-color, 0.2);
 }
 
 .radio label {
