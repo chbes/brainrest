@@ -30,14 +30,12 @@ export class TimeInputComponent implements OnInit {
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes.value != undefined) {
-      console.log('#', changes.value.currentValue);
       this.decimalToHms(changes.value.currentValue);
     }
   }
 
   update() {
     const value = parseInt(this.h) + (parseInt(this.m) / 60) + (parseInt(this.s) / 3600);
-    console.log("V:", value);
     this.decimalToHms(value);
     this.valueChange.emit(value);
   }
