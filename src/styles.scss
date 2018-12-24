@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
-$main-color: #CF000F;
-$background-color: #ECF0F1;
-$text-color: #343434;
+$main-color: #2a7de9;
+$background-color: #EFEFEF;
+$text-color: #424242;
+
+$font-family: Roboto, "Helvetica Neue", sans-serif;
 
 html,
 body {
@@ -11,7 +13,7 @@ body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: $font-family;
   background-color: $background-color;
   color: $text-color;
 }
