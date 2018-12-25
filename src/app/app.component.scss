@@ -1,14 +1,27 @@
-@import '../styles.scss';
+@import '../variables.scss';
 
 /* Main frame */
 .container {
-  padding: 5% 10%;
+  margin: 4% 7% 3% 7%;
+  flex-direction: column;
+
+  @media screen and (min-width: $break-small) {
+    margin: 4%;
+    flex-direction: row;
+  }
+
 }
 
 /* Toolbar */
 .toolbar {
+  padding: 0 7%;
   background-color: $main-color;
   color: $background-color;
+
+  img {
+    width: 20px;
+    margin: 0 2%;
+  }
 }
 
 /* Flex box */
@@ -16,15 +29,6 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  // align-items: center;
-}
-
-.row {
-  flex-direction: row;
-}
-
-.column {
-  flex-direction: column;
 }
 
 .flex-item {
@@ -33,15 +37,23 @@
 
 /* Section */
 .section {
-  
+
+  @media screen and (min-width: $break-small) {
+    padding: 2% 5%;
+  }
+
   .title {
+    margin: 0;
     font-size: 16px;
     font-weight: 500;
+    color: transparentize($text-color, 0.15);
   }
 
 }
 
 .inputs-frame {
+
+  flex-direction: column;
 
   .flex-item {
     margin-bottom: 11%;
@@ -51,6 +63,7 @@
 
 .radios-frame {
 
+  flex-direction: row;
   margin-top: 7%;
 
   .flex-item {}
