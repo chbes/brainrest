@@ -34,6 +34,7 @@ input:focus {
   width: 100%;
   margin-top: 2%;
   font-weight: 500;
+
   input {
     color: $text-color;
   }
@@ -47,8 +48,9 @@ input:focus {
   border-color: $main-color;
   color: $main-color;
   pointer-events: none;
+
   input {
-  color: $main-color;
+    color: $main-color;
   }
 }
 
