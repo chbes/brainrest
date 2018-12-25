@@ -10,7 +10,7 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  align-items: center;
+  // align-items: center;
 }
 
 .row {
@@ -40,11 +40,10 @@
 }
 
 .radios-frame {
-  
+
   margin-top: 14%;
-  
-  .flex-item {
-  }
+
+  .flex-item {}
 }
 
 /* Radio */
@@ -58,6 +57,11 @@
 
 .radio input:checked~label {
   color: $main-color;
+}
+
+.radio input:checked~label::after {
+  content: '•';
+  display: block;
 }
 
 .radio {
