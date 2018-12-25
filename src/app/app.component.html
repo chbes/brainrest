@@ -4,54 +4,61 @@
 
 <div class="container">
 
-  <form>
+    <div class="section">
 
-    <div class="flex-container column inputs-frame">
+      <div class="flex-container column inputs-frame">
 
-      <div class="flex-item">
-        <number-input [choose]="choice == 'distance'" [value]="distance" [name]="'DISTANCE'" [unit]="'KM'"
-          (valueChange)="distance = $event;compute();"></number-input>
-      </div>
+        <div class="flex-item">
+          <number-input [choose]="choice == 'distance'" [value]="distance" [name]="'DISTANCE'" [unit]="'KM'"
+            (valueChange)="distance = $event;compute();"></number-input>
+        </div>
 
-      <div class="flex-item">
-        <time-input [choose]="choice == 'time'" [value]="time" [name]="'TIME'" [unit]="'HH:MM:SS'" (valueChange)="time = $event;compute();"></time-input>
-      </div>
+        <div class="flex-item">
+          <time-input [choose]="choice == 'time'" [value]="time" [name]="'TIME'" [unit]="'HH:MM:SS'" (valueChange)="time = $event;compute();"></time-input>
+        </div>
 
-      <div class="flex-item">
-        <number-input [choose]="choice == 'speed'" [value]="speed" [name]="'SPEED'" [unit]="'KM/H'" (valueChange)="speed = $event;pace = 1 / speed * 60;compute();"></number-input>
-      </div>
+        <div class="flex-item">
+          <number-input [choose]="choice == 'speed'" [value]="speed" [name]="'SPEED'" [unit]="'KM/H'" (valueChange)="speed = $event;pace = 1 / speed * 60;compute();"></number-input>
+        </div>
 
-      <div class="flex-item">
-        <time-input [choose]="choice == 'speed'" [value]="pace" [name]="'PACE'" [unit]="'MM:SS'" (valueChange)="pace = $event;speed = round(1 / (pace / 60));compute();"></time-input>
-      </div>
+        <div class="flex-item">
+          <time-input [choose]="choice == 'speed'" [value]="pace" [name]="'PACE'" [unit]="'MM:SS'" (valueChange)="pace = $event;speed = round(1 / (pace / 60));compute();"></time-input>
+        </div>
 
-    </div>
-
-    <div class="flex-container row radios-frame">
-
-      <div class="radio flex-item">
-        <input id="distance" type="radio" [(ngModel)]="choice" value="distance" name="choice" />
-        <label for="distance" class="radio">
-          DISTANCE
-        </label>
-      </div>
-
-      <div class="radio flex-item">
-        <input id="time" type="radio" [(ngModel)]="choice" value="time" name="choice" />
-        <label for="time" class="radio">
-          TIMER
-        </label>
-      </div>
-
-      <div class="radio flex-item">
-        <input id="speed" type="radio" [(ngModel)]="choice" value="speed" name="choice" />
-        <label for="speed" class="radio">
-          SPEED
-        </label>
       </div>
 
     </div>
 
-  </form>
+
+    <div class="section">
+
+      <h3 class="title">WHAT YOU WANT COMPUTE ?</h3>
+
+      <div class="flex-container row radios-frame">
+
+        <div class="radio flex-item">
+          <input id="distance" type="radio" [(ngModel)]="choice" value="distance" name="choice" />
+          <label for="distance" class="radio">
+            DISTANCE
+          </label>
+        </div>
+
+        <div class="radio flex-item">
+          <input id="time" type="radio" [(ngModel)]="choice" value="time" name="choice" />
+          <label for="time" class="radio">
+            TIMER
+          </label>
+        </div>
+
+        <div class="radio flex-item">
+          <input id="speed" type="radio" [(ngModel)]="choice" value="speed" name="choice" />
+          <label for="speed" class="radio">
+            SPEED
+          </label>
+        </div>
+
+      </div>
+
+    </div>
 
 </div>

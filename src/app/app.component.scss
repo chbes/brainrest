@@ -5,6 +5,12 @@
   padding: 5% 10%;
 }
 
+/* Toolbar */
+.toolbar {
+  background-color: $main-color;
+  color: $background-color;
+}
+
 /* Flex box */
 .flex-container {
   display: flex;
@@ -25,10 +31,14 @@
   width: 100%;
 }
 
-/* Toolbar */
-.toolbar {
-  background-color: $main-color;
-  color: $background-color;
+/* Section */
+.section {
+  
+  .title {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
 }
 
 .inputs-frame {
@@ -41,7 +51,7 @@
 
 .radios-frame {
 
-  margin-top: 14%;
+  margin-top: 7%;
 
   .flex-item {}
 }
