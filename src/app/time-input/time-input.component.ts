@@ -14,9 +14,9 @@ export class TimeInputComponent implements OnInit {
 
   @Output() valueChange = new EventEmitter();
 
-  private h: string;
-  private m: string;
-  private s: string;
+  h: string;
+  m: string;
+  s: string;
 
   constructor() {
     this.h = '0';

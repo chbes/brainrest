@@ -1,5 +1,13 @@
 @import '../variables.scss';
 
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+  -moz-transform: rotate($degrees);
+  -ms-transform: rotate($degrees);
+  -o-transform: rotate($degrees);
+  transform: rotate($degrees);
+}
+
 /* Main frame */
 .container {
   margin: 4% 7% 3% 7%;
@@ -14,13 +22,21 @@
 
 /* Toolbar */
 .toolbar {
+  height: 60px;
   padding: 0 7%;
   background-color: $main-color;
   color: $background-color;
 
   img {
     width: 20px;
-    margin: 0 2%;
+  }
+
+  img:nth-child(2) {
+    @include rotate(180deg);
+  }
+
+  h1 {
+    margin-left: 2%;
   }
 }
 

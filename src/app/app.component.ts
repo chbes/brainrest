@@ -7,12 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  private choice = 'speed';
-
-  private distance = 10;
-  private time = 1;
-  private speed = 10;
-  private pace = 6;
+  choice = 'speed';
+  distance = 10;
+  time = 1;
+  speed = 10;
+  pace = 6;
 
   compute() {
     switch (this.choice) {
