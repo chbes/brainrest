@@ -25,7 +25,7 @@ import { NumberInputComponent } from './number-input/number-input.component';
     MatButtonModule,
     MatRadioModule,
     FormsModule,
-    environment.production ? ServiceWorkerModule.register('ngsw-worker.js') : []
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
