@@ -1,18 +1,14 @@
 {
   "lang": "en",
-  "name": "BrainRest",
-  "short_name": "BrainRest",
+  "name": "BRAINREST",
+  "short_name": "BRAINREST",
   "description": "Calculate for you the famous triangle Distance/Time/Speed !",
-  "theme_color": "#2A7DE9",
-  "background_color": "#ECF0F1",
+  "theme_color": "#1255A5",
+  "background_color": "#FAFAFA",
   "display": "standalone",
-  "scope": "/",
-  "start_url": "http://localhost/brainrest/",
+  "scope": "/brainrest/",
+  "start_url": "/brainrest/",
   "icons": [
-    {
-      "src": "/favicon.ico",
-      "sizes": "16x16 32x32"
-    },
     {
       "src": "assets/icons/icon-72x72.png",
       "sizes": "72x72",
