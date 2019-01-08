@@ -1,12 +1,21 @@
 <span for="time" class="name">{{name}}</span>
 <span for="time" class="unit">{{unit}}</span>
 <div class="time" name="time" [ngClass]="{choose: choose}">
-  <input type="number" name="h" [ngModel]="h" (ngModelChange)="h = $event;update();" step="1" min="0" max="99"
-    placeholder="--">
+  <!-- <input type="number" name="h" [ngModel]="h" (ngModelChange)="h = $event;update();" step="1" min="0" max="99"
+    placeholder="--"> -->
+  <select [(ngModel)]="h" (ngModelChange)="update();">
+    <option [value]="v" *ngFor="let v of values0to999">{{v | leftPad: 2 : '0'}}</option>
+  </select>
   <span>:</span>
-  <input type="number" name="m" [ngModel]="m" (ngModelChange)="m = $event;update();" step="1" min="0"
-    [max]="59" placeholder="--">
+  <!-- <input type="number" name="m" [ngModel]="m" (ngModelChange)="m = $event;update();" step="1" min="0"
+    [max]="59" placeholder="--"> -->
+  <select [(ngModel)]="m" (ngModelChange)="update();">
+    <option [value]="v" *ngFor="let v of values0to59">{{v | leftPad: 2 : '0'}}</option>
+  </select>
   <span *ngIf="unit == 'HH:MM:SS'">:</span>
-  <input *ngIf="unit == 'HH:MM:SS'" type="number" name="s" [ngModel]="s" (ngModelChange)="s = $event;update();"
-    step="1" min="0" max="59" placeholder="--">
+  <!-- <input *ngIf="unit == 'HH:MM:SS'" type="number" name="s" [ngModel]="s" (ngModelChange)="s = $event;update();"
+    step="1" min="0" max="59" placeholder="--"> -->
+  <select *ngIf="unit == 'HH:MM:SS'" [(ngModel)]="s" (ngModelChange)="update();">
+    <option [value]="v" *ngFor="let v of values0to59">{{v | leftPad: 2 : '0'}}</option>
+  </select>
 </div>

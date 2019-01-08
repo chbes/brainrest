@@ -14,18 +14,29 @@ export class TimeInputComponent implements OnInit {
 
   @Output() valueChange = new EventEmitter();
 
-  h: string;
-  m: string;
-  s: string;
+  private values0to59 = [];
+  private values0to999 = [];
+
+
+  h: number;
+  m: number;
+  s: number;
 
   constructor() {
-    this.h = '0';
-    this.m = '0';
-    this.s = '0';
+    this.h = 0;
+    this.m = 0;
+    this.s = 0;
   }
 
   ngOnInit() {
     this.decimalToHms(this.value);
+
+    for (let i = 0; i <= 59; i++) {
+      this.values0to59.push(i);
+    }
+    for (let i = 0; i <= 999; i++) {
+      this.values0to999.push(i);
+    }
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -35,20 +46,19 @@ export class TimeInputComponent implements OnInit {
   }
 
   update() {
-    const value = parseInt(this.h) + (parseInt(this.m) / 60) + (parseInt(this.s) / 3600);
-    this.decimalToHms(value);
+    const value = (this.h * 1) + (this.m / 60) + (this.s / 3600);
+    // this.decimalToHms(value);
     this.valueChange.emit(value);
   }
 
-  addLeadingZero(s: string) {
-    if (s.length <= 1) {
-      s = '0' + s;
-    }
-    return s;
-  }
+  // addLeadingZero(s: string) {
+  //   if (s.length <= 1) {
+  //     s = '0' + s;
+  //   }
+  //   return s;
+  // }
 
   decimalToHms(n: number) {
-
     let h = Math.trunc(n);
 
     n = (n - h) * 60;
@@ -61,9 +71,9 @@ export class TimeInputComponent implements OnInit {
       m++;
     }
 
-    this.h = this.addLeadingZero(h.toString());
-    this.m = this.addLeadingZero(m.toString());
-    this.s = this.addLeadingZero(s.toString());
+    this.h = h;
+    this.m = m;
+    this.s = s;
   }
 
 }

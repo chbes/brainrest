@@ -13,14 +13,18 @@ input {
   width: 23%;
 }
 
-input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input:focus {
+select {
+  text-align: center;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  background-color: transparent;
+  margin: 0 3%;
+  border: none;
   outline: none;
+  text-align-last:center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 .time {
@@ -37,7 +41,7 @@ input:focus {
   margin-top: 2%;
   font-weight: 500;
 
-  input {
+  select {
     color: $text-color;
   }
 }
@@ -51,7 +55,7 @@ input:focus {
   color: $main-color;
   pointer-events: none;
 
-  input {
+  select {
     color: $main-color;
   }
 }
