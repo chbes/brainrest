@@ -10,11 +10,13 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { TimeInputComponent } from './time-input/time-input.component';
 import { NumberInputComponent } from './number-input/number-input.component';
+import { LeftPadPipe } from './pipe/left-pad.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     TimeInputComponent,
-    NumberInputComponent
+    NumberInputComponent,
+    LeftPadPipe
   ],
   imports: [
     BrowserModule,
