@@ -14,9 +14,8 @@ export class TimeInputComponent implements OnInit {
 
   @Output() valueChange = new EventEmitter();
 
-  private values0to59 = [];
-  private values0to999 = [];
-
+  values0to59 = [];
+  values0to999 = [];
 
   h: number;
   m: number;
@@ -47,16 +46,8 @@ export class TimeInputComponent implements OnInit {
 
   update() {
     const value = (this.h * 1) + (this.m / 60) + (this.s / 3600);
-    // this.decimalToHms(value);
     this.valueChange.emit(value);
   }
-
-  // addLeadingZero(s: string) {
-  //   if (s.length <= 1) {
-  //     s = '0' + s;
-  //   }
-  //   return s;
-  // }
 
   decimalToHms(n: number) {
     let h = Math.trunc(n);
